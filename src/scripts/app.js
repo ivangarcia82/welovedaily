@@ -9,7 +9,19 @@ marqueeContainers.forEach(container => {
   const loop = horizontalLoop(boxes, { repeat: -1 });
 });
 
+const marqueeContainers2 = gsap.utils.toArray(".image-marquee");
+marqueeContainers2.forEach(container => {
+  const boxes = gsap.utils.toArray(container.querySelectorAll("div"));
+  const loop = horizontalLoop(boxes, { repeat: -1, speed: 2 });
 
+  container.addEventListener("mouseenter", () => {
+    gsap.to(loop, { timeScale: 0, duration: 0.5, ease: "power2.out" });
+  });
+
+  container.addEventListener("mouseleave", () => {
+    gsap.to(loop, { timeScale: 1, duration: 0.5, ease: "power2.out" });
+  });
+});
 
 
 /*
