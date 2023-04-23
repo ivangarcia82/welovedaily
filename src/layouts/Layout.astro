@@ -14,22 +14,36 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<script src="../scripts/app.js"></script>
+
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	@font-face {
+		font-family: 'Nohemi';
+		src: url('fonts/Nohemi-Regular-BF6438cc579d934.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Nohemi';
+		src: url('fonts/Nohemi-Bold-BF6438cc577b524.woff') format('woff');
+		font-weight: bold;
+		font-style: normal;
+		font-display: swap;
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		background-color: #120E0E;
+		color: #fff;
+		font-family: 'Nohemi', Arial, Helvetica, sans-serif;
 	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+	body {
+		font-family: 'Nohemi', Arial, Helvetica, sans-serif;
 	}
+	
 </style>
