@@ -5,29 +5,32 @@ import Layout from '../layouts/Layout.astro';
 import sendGrid from '@sendgrid/mail';
 sendGrid.setApiKey( import.meta.env.SENDGRID_API_KEY );
 
+
 if (Astro.request.method === 'POST') {
   try{
     
     const data = await Astro.request.formData();
+	console.log(data);
     const name = data.get('name');
 	const email = data.get('email');
     const project = data.get('project');
 	const credits = data.get('credits');
-	const channel = data.get('channel');
+	const channel = data.get('channel'); 
 
     // Sending email
     const msg = {
       to: 'hello@welovedaily.com',
       from: 'hello@welovedaily.com',
       replyTo: {email:email, name:name},
-      subject: `Form submission from welovedaily by ${name}!`,
-      text: `Channel: ${name}<br />
-	  Project: ${name}<br />
-	  Credits: ${credits}<br />`
-    }
+      subject: `New submission from by ${name}`,
+      text: `Project: ${project}
+Credits: ${credits}
+Files: ${files}
+Channel: ${channel}`
+    } 
     await sendGrid.send(msg).then(() => {
       console.log('Email sent')
-    }).catch((error) => {
+    }).catch((error) => { 
       console.error(error)
     });
 
@@ -52,12 +55,12 @@ if (Astro.request.method === 'POST') {
 
 					<label class="grow">
 						Your name
-						<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="name" placeholder="John Doe" />
+						<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="name" placeholder="John Doe" required/>
 					</label>
 
 					<label class="grow">
 						Your email
-						<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="email" placeholder="john@doe.com"  />
+						<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="email" name="email" placeholder="john@doe.com" required />
 					</label>
 
 				</div>
@@ -73,35 +76,35 @@ if (Astro.request.method === 'POST') {
 				</label>
 
 				<label class="grow">
-					Files
-					<input class="block p-8 bg-darkgrey w-full mb-4 rounded-md" type="file" id="files" name="files" multiple>
+					URL to files
+					<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="files" placeholder="For example a Dropbox or Google Drive link" />
 				</label>
 
 				<label for="channel block">Channel</label>
 				<div class="grid grid-cols-2 mb-12 gap-2 pt-2">
 					<div>
-						<input type="radio" name="channel" id="welovewebdesign" class="peer hidden" />
+						<input type="radio" value="welovewebdesign" name="channel" id="welovewebdesign" class="peer hidden" />
 						<label
 						for="welovewebdesign"
 						class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:from-webdesign_1 peer-checked:to-webdesign_2 bg-gradient-to-r peer-checked:text-black"
-						>welovewebdesign 701k</label>		
+						>welovewebdesign</label>		
 					</div>
 					<div>
-						<input type="radio" name="channel" id="welovebranding" class="peer hidden" />
+						<input type="radio" value="welovebranding" name="channel" id="welovebranding" class="peer hidden" />
 						<label
 						for="welovebranding"
 						class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:from-branding_1 peer-checked:to-branding_2 bg-gradient-to-r peer-checked:text-black"
 						>welovebranding</label>
 					</div>
 					<div>
-						<input type="radio" name="channel" id="weloveillustrations" class="peer hidden" />
+						<input type="radio" value="weloveillustrations" name="channel" id="weloveillustrations" class="peer hidden" />
 						<label
 						for="weloveillustrations"
 						class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:from-illustration_1 peer-checked:to-illustration_2 bg-gradient-to-r peer-checked:text-black"
 						>weloveillustrations</label>
 					</div>
 					<div>
-						<input type="radio" name="channel" id="weloveanimations" class="peer hidden" />
+						<input type="radio" value="weloveanimations" name="channel" id="weloveanimations" class="peer hidden" />
 						<label
 						for="weloveanimations"
 						class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:from-animations_1 peer-checked:to-animations_2 bg-gradient-to-r peer-checked:text-black"
