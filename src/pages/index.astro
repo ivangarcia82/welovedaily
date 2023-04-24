@@ -2,11 +2,10 @@
 
 import Layout from '../layouts/Layout.astro';
 
-import Logo from '../snippets/Logo.astro';
-
 import Marquee from '../components/Marquee.astro';
 import Card from '../components/Card.astro';
 import Slide from '../components/Slide.astro';
+import ListItem from '../components/ListItem.astro';
 
 ---
 
@@ -14,8 +13,6 @@ import Slide from '../components/Slide.astro';
 	<main>
 	
 		<div class="mx-auto container text-center">
-
-			<Logo />
 
 			<h1 class="text-xl lg:text-3xl mb-20 mx-auto max-w-[1000px]">Share your work on the <em class="not-italic underline">biggest design community</em> on Instagram.</h1>
 			
@@ -32,7 +29,7 @@ import Slide from '../components/Slide.astro';
 						title="welovewebdesign"
 						color1="webdesign_1"
 						color2="webdesign_2"
-						count="700k"
+						count="701k"
 					/>
 				</li>
 				<li>
@@ -145,37 +142,20 @@ import Slide from '../components/Slide.astro';
 			<div class="flex gap-20">
 				<div>
 
-					<div class="flex gap-6 items-center justify-center">
-						<svg class="w-[40px]" width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 31.5V0.5H16.5V31.5H14.5Z" fill="white"/>
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M0 15L31 15L31 17L-8.74228e-08 17L0 15Z" fill="white"/>
-						</svg>
-						<p class="text-xl">Share your work with designers from all over the world.</p>
-					</div>
-						
+					<ListItem text="Share your work with designers from all over the world." />
+
 				</div>
 				<div>
 
-					<div class="flex gap-6 items-center justify-center">
-						<svg class="w-[40px]" width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 31.5V0.5H16.5V31.5H14.5Z" fill="white"/>
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M0 15L31 15L31 17L-8.74228e-08 17L0 15Z" fill="white"/>
-						</svg>
-						<p class="text-xl">Inspire yourself and others with your designs.</p>
-					</div>
-						
+					<ListItem text="Inspire yourself and others with your designs." />
+
 				</div>
 				<div>
 
-					<div class="flex gap-6 items-center justify-center">
-						<svg class="w-[40px]" width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 31.5V0.5H16.5V31.5H14.5Z" fill="white"/>
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M0 15L31 15L31 17L-8.74228e-08 17L0 15Z" fill="white"/>
-						</svg>
-						<p class="text-xl">Grow your follower base and reach potential clients.</p>
-					</div>
-						
+					<ListItem text="Grow your follower base and reach potential clients." />
+
 				</div>
+
 			</div>
 		</div>
 
