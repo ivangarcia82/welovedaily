@@ -2,6 +2,40 @@
 
 import Layout from '../layouts/Layout.astro';
 
+import sendGrid from '@sendgrid/mail';
+sendGrid.setApiKey( import.meta.env.SENDGRID_API_KEY );
+
+if (Astro.request.method === 'POST') {
+  try{
+    
+    const data = await Astro.request.formData();
+    const name = data.get('name');
+	const email = data.get('email');
+    const project = data.get('project');
+	const credits = data.get('credits');
+	const channel = data.get('channel');
+
+    // Sending email
+    const msg = {
+      to: 'hello@welovedaily.com',
+      from: 'hello@welovedaily.com',
+      replyTo: {email:email, name:name},
+      subject: `Form submission from welovedaily by ${name}!`,
+      text: `Channel: ${name}<br />
+	  Project: ${name}<br />
+	  Credits: ${credits}<br />`
+    }
+    await sendGrid.send(msg).then(() => {
+      console.log('Email sent')
+    }).catch((error) => {
+      console.error(error)
+    });
+
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 ---
 
 <Layout title="welovedaily">
@@ -18,29 +52,29 @@ import Layout from '../layouts/Layout.astro';
 
 					<label class="grow">
 						Your name
-						<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="name" placeholder="John Doe" required />
+						<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="name" placeholder="John Doe" />
 					</label>
 
 					<label class="grow">
 						Your email
-						<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="email" placeholder="john@doe.com"  required />
+						<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="email" placeholder="john@doe.com"  />
 					</label>
 
 				</div>
 				
 				<label class="grow">
 					Project name
-					<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="name" placeholder="My awesome project" required />
+					<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="project" placeholder="My awesome project" />
 				</label>
 
 				<label class="grow">
 					Credits
-					<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="name" placeholder="By My Studio @mystudio" required />
+					<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="credits" placeholder="By My Studio @mystudio" />
 				</label>
 
 				<label class="grow">
 					Files
-					<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="name" placeholder="My awesome project" required />
+					<input class="block p-8 bg-darkgrey w-full mb-4 rounded-md" type="file" id="files" name="files" multiple>
 				</label>
 
 				<label for="channel block">Channel</label>
