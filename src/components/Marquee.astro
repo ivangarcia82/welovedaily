@@ -3,7 +3,7 @@ const { href, title, color1, color2, count } = Astro.props;
 ---
 
 <a href={href} target="_blank" class="py-2 flex items-center justify-center group relative overflow-hidden">
-	<div class={`marquee from-${color1} to-${color2} bg-gradient-to-r overflow-hidden absolute left-0 top-0 w-full text-black py-2 h-[96px] [&>span]:mx-4 flex translate-y-full group-hover:translate-y-0 transition duration-300`}>
+	<div class={`marquee from-${color1} to-${color2} bg-gradient-to-r overflow-hidden absolute left-0 top-0 w-full text-black py-2 h-[96px] [&>span]:px-20 flex translate-y-full group-hover:translate-y-0 transition duration-300`}>
 		<span>{title} </span>
 		<span>{title} </span>
 		<span>{title} </span>
@@ -14,3 +14,20 @@ const { href, title, color1, color2, count } = Astro.props;
 	{title}
 	<span class={`tag from-${color1} to-${color2} ml-4 px-4 py-2 text-sm text-black leading-none rounded-full bg-gradient-to-r`}>{count}</span>
 </a>
+
+
+<style>
+	.marquee span{
+		position: relative;
+	}
+	.marquee span:after{
+		content: '';
+		position: absolute;
+		display: block;
+		background-image: url("data:image/svg+xml,%3Csvg width='51' height='51' viewBox='0 0 51 51' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M49.475 6.47489L5.4324 50.5175L0.482651 45.5677L44.5252 1.52515L49.475 6.47489Z' fill='%23120E0E'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M43.5 7.5H1V0.5H50.5V50H43.5V7.5Z' fill='%23120E0E'/%3E%3C/svg%3E%0A");
+		width: 50px;
+		height: 50px;
+		right: -1.5rem;
+		top: 12px;
+	}
+</style>
