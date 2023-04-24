@@ -19,21 +19,31 @@ const { title } = Astro.props;
 
 	</head>
 	<body>
+
 		<slot />
+
+		<footer class="bg-offwhite text-black">
+			<div class="container mx-auto py-12">
+
+				<div class="flex">
+					<p class="grow text-xl">Part of Okaia ©2023</p>
+					<ul class="flex gap-6 text-xl">
+						<li><a href="/">Home</a></li>
+						<li><a href="/faq">FAQ</a></li>
+						<li><a href="/submit">Submit</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</footer>
 	</body>
 </html>
 <style is:global>
 	@font-face {
 		font-family: 'Nohemi';
-		src: url('/fonts/Nohemi-Regular-BF6438cc579d934.woff') format('woff');
+		src: url('/fonts/Nohemi-Regular.woff') format('woff');
+		src: url('/fonts/Nohemi-Regular.woff2') format('woff2');
 		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
-	@font-face {
-		font-family: 'Nohemi';
-		src: url('/fonts/Nohemi-Bold-BF6438cc577b524.woff') format('woff');
-		font-weight: bold;
 		font-style: normal;
 		font-display: swap;
 	}

@@ -14,5 +14,8 @@
     "astro": "^2.3.0",
     "gsap": "^3.11.5",
     "tailwindcss": "^3.3.1"
+  },
+  "devDependencies": {
+    "accessible-astro-components": "^2.0.0"
   }
 }

@@ -14,7 +14,9 @@ module.exports = {
 			transparent: 'transparent',
 			current: 'currentColor',
 			'white': '#ffffff',
+			'offwhite': '#D9D9D9',
 			'black': '#120E0E',
+			'darkgrey': '#1E1A1A',
 
 			'webdesign_1': '#FBAB7E',
 			'webdesign_2': '#F7CE68',
