@@ -2,13 +2,22 @@
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		container: {
+			center: true,
+			padding: '1rem',
+		},
 		fontSize: {
-			sm: '16px',
-			base: ['18px', '26px'],
-			xl: '1.25rem',
-			'2xl': '1.563rem',
-			'3xl': ['60px', '63px'],
-			'4xl': ['80px', '80px'],
+
+			'xs': ['14px'],
+			'sm': ['16px'],
+			'base': ['20px', '28px'],
+			'md': ['30px', '30px'],
+			'lg': ['40px', '40px'],
+			'xl': ['50px', '50px'],
+			'2xl': ['60px', '60px'],
+			'3xl': ['80px', '80px']
+
+
 		},
 		colors: {
 			transparent: 'transparent',
