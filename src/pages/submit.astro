@@ -13,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
 
 			<form class="text-left max-w-[600px] mx-auto" netlify
 			netlify-honeypot
-			name="feedback"
+			name="Submission"
 			method="POST"
 			action="/success">
 
@@ -42,8 +42,8 @@ import Layout from '../layouts/Layout.astro';
 				</label>
 
 				<label class="grow">
-					URL to files
-					<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="files" placeholder="For example a Dropbox or Google Drive link" />
+					File 1
+					<input class="mt-1 mb-4 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="file" name="files" placeholder="For example a Dropbox or Google Drive link" />
 				</label>
 
 				<label for="channel block">Channel</label>
