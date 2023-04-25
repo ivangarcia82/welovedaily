@@ -14,7 +14,7 @@ import ListItem from '../components/ListItem.astro';
 	
 		<div class="mx-auto container text-center">
 
-			<h1 class="text-lg lg:text-2xl mb-12 lg:mb-20 mx-auto max-w-[1000px]">Share your work on the <em class="not-italic underline">biggest design community</em> on Instagram.</h1>
+			<h1 class="text-lg lg:text-2xl mb-12 lg:mb-20 mx-auto max-w-[800px]">Share your work on the <em>biggest design community</em> on Instagram.</h1>
 			
 		</div>
 	
@@ -71,22 +71,22 @@ import ListItem from '../components/ListItem.astro';
 
 				<div>
 					<Card
-						title="Starter"
-						description="Post up to 10 images or videos in square format to our instagram feed for 2 weeks or longer. At one of our 4 channels."
+						title="Regular"
+						description="A regular post on one of our four channels with a maximum of 6 images and videos."
 						price="$28"
 					/>
 				</div>
 				<div>
 					<Card
-						title="Regular"
-						description="Post up to 10 images or videos in square format to our instagram feed for 2 weeks or longer. At one of our 4 channels."
+						title="Plus"
+						description="Post on one of our four channels plus a story promoting your submission for a bigger reach."
 						price="$34"
 					/>
 				</div>
 				<div>
 					<Card
-						title="Pro"
-						description="Post up to 10 images or videos in square format to our instagram feed for 2 weeks or longer. At one of our 4 channels."
+						title="Series"
+						description="Three submissions at a discounted rate. Contact us for bigger bundles and subscriptions."
 						price="$40"
 					/>
 				</div>
@@ -164,8 +164,8 @@ import ListItem from '../components/ListItem.astro';
 			<div class="lg:grid grid-cols-12 gap-20 items-center">
 				<div class="col-span-6 lg:order-2">
 
-					<h2 class="text-lg lg:text-3xl mb-4">All designs © of their respective owners</h2>
-					<p class="text-base font-normal	mb-8 lg:mb-0">We at welovedaily think it's important that it's about you, the designer. The appreciation must go to you, not to us.</p>
+					<h2 class="text-lg lg:text-3xl mb-4">All designs are <em>©</em> of their respective owners</h2>
+					<p class="text-base mb-8 lg:mb-0 font-light">We at welovedaily think it's important that it's about you, the designer. The appreciation must go to you, not to us.</p>
 
 				</div>
 				<div class="col-span-5 col-start-2 lg:order-1">
@@ -173,7 +173,7 @@ import ListItem from '../components/ListItem.astro';
 					<img class="aspect-square rounded-3xl" src="/img/fishcamp.jpg" alt="">
 					<div class="mt-2 p-8 rounded-3xl bg-darkgrey">
 
-						<p class="text-base">By George Smith @georgesmith<br />
+						<p class="text-base font-light">By George Smith @georgesmith<br />
 						Follow us @welovewebdesign<br />
 						Link:  instagram.com/p/Cq-ABFyNQ19/</p>
 
@@ -184,3 +184,9 @@ import ListItem from '../components/ListItem.astro';
 
 	</main>
 </Layout>
+
+<style>
+em{
+	@apply not-italic text-transparent bg-clip-text bg-gradient-to-r from-webdesign_1 to-webdesign_2;
+}
+</style>

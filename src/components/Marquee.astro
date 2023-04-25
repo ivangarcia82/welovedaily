@@ -2,8 +2,8 @@
 const { href, title, color1, color2, count } = Astro.props;
 ---
 
-<a href={href} target="_blank" class="py-2 flex items-center justify-center lg:group relative overflow-hidden">
-	<div class={`marquee from-${color1} to-${color2} bg-gradient-to-r overflow-hidden absolute left-0 top-0 w-full text-black py-2 h-[96px] [&>span]:px-20 flex translate-y-full group-hover:translate-y-0 transition duration-300`}>
+<a href={href} target="_blank" class="py-2 flex items-center justify-center group relative overflow-hidden">
+	<div class={`marquee from-${color1} to-${color2} bg-gradient-to-r overflow-hidden absolute left-0 top-0 w-full text-black py-2 h-[96px] [&>span]:px-[60px] flex translate-y-full group-hover:translate-y-0 transition duration-300`}>
 		<span>{title} </span>
 		<span>{title} </span>
 		<span>{title} </span>
