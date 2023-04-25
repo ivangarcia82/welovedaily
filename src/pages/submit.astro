@@ -2,43 +2,6 @@
 
 import Layout from '../layouts/Layout.astro';
 
-import sendGrid from '@sendgrid/mail';
-sendGrid.setApiKey( import.meta.env.SENDGRID_API_KEY );
-
-
-if (Astro.request.method === 'POST') {
-  try{
-    
-    const data = await Astro.request.formData();
-	console.log(data);
-    const name = data.get('name');
-	const email = data.get('email');
-    const project = data.get('project');
-	const credits = data.get('credits');
-	const channel = data.get('channel'); 
-
-    // Sending email
-    const msg = {
-      to: 'hello@welovedaily.com',
-      from: 'hello@welovedaily.com',
-      replyTo: {email:email, name:name},
-      subject: `New submission from by ${name}`,
-      text: `Project: ${project}
-Credits: ${credits}
-Files: ${files}
-Channel: ${channel}`
-    } 
-    await sendGrid.send(msg).then(() => {
-      console.log('Email sent')
-    }).catch((error) => { 
-      console.error(error)
-    });
-
-  } catch (error) {
-    console.error(error);
-  }
-}
-
 ---
 
 <Layout title="welovedaily">
@@ -48,8 +11,11 @@ Channel: ${channel}`
 
 			<h1 class="text-xl lg:text-3xl mb-20">Submit your work</h1>
 
-			<form method="POST" class="text-left max-w-[600px] mx-auto">
-
+			<form class="text-left max-w-[600px] mx-auto" netlify
+			netlify-honeypot
+			name="feedback"
+			method="POST"
+			action="/success">
 
 				<div class="flex w-full gap-4">
 
