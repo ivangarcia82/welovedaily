@@ -132,20 +132,15 @@ import Layout from '../layouts/Layout.astro';
 
 
 <script>
-// Hide all file input fields except for the first one
 document.querySelectorAll('#file-inputs label:not(:first-of-type)').forEach(function(label) {
   label.classList.add('hidden');
 });
 
-// Add event listener to the "Add another file" button
 document.getElementById('add-file').addEventListener('click', function() {
-  // Find the first hidden file input field and show it
   var hiddenLabel = document.querySelector('#file-inputs label.hidden');
   if (hiddenLabel) {
     hiddenLabel.classList.remove('hidden');
   }
-
-  // If all file input fields are now visible, hide the "Add another file" button
   var numVisible = document.querySelectorAll('#file-inputs label:not(.hidden)').length;
   if (numVisible === 6) {
     document.getElementById('add-file').classList.add('hidden');
