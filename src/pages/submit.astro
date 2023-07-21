@@ -17,6 +17,38 @@ import Layout from '../layouts/Layout.astro';
 			method="POST"
 			action="/success">
 
+				<label for="channel block">Plan</label>
+				<div class="grid grid-cols-3 mb-12 gap-2 pt-2">
+					<div>
+						<input type="radio" value="basic" name="plan" id="basic" class="peer hidden" />
+						<label
+						for="basic"
+						class="text-md block cursor-pointer select-none rounded-xl pt-12 pb-10 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white"
+						>Basic
+						<span class="text-sm font-normal opacity-50 block mt-2">$25</span>
+						</label>		
+					</div>
+					<div>
+						<input type="radio" value="regular" name="plan" id="regular" class="peer hidden" />
+						<label
+						for="regular"
+						class="text-md block cursor-pointer select-none rounded-xl pt-12 pb-10 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white"
+						>Regular
+						<span class="text-sm font-normal opacity-50 block mt-2">$35</span>
+						</label>
+					</div>
+					<div>
+						<input type="radio" value="pro" name="plan" id="pro" class="peer hidden" />
+						<label
+						for="pro"
+						class="text-md block cursor-pointer select-none rounded-xl pt-12 pb-10 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white"
+						>Pro
+						<span class="text-sm font-normal opacity-50 block mt-2">$50</span>
+						</label>
+					</div>
+				</div>
+
+
 				<div class="flex w-full gap-4">
 
 					<label class="grow">
@@ -43,31 +75,26 @@ import Layout from '../layouts/Layout.astro';
 
 
 				<div id="file-inputs" class="grid w-full gap-4 mb-6">
-					<label class="flex items-center">
-					  <div class="w-20">File 1</div>
-					  <input class="mt-1 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="file" name="file_1" placeholder="For example a Dropbox or Google Drive link" />
-					</label>
-					<label class="flex items-center hidden file2">
-					  <div class="w-20">File 2</div>
-					  <input class="mt-1 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="file" name="file_2" placeholder="For example a Dropbox or Google Drive link" />
-					</label>
-					<label class="flex items-center hidden file3">
-					  <div class="w-20">File 3</div>
-					  <input class="mt-1 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="file" name="file_3" placeholder="For example a Dropbox or Google Drive link" />
-					</label>
-					<label class="flex items-center hidden file4">
-					  <div class="w-20">File 4</div>
-					  <input class="mt-1 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="file" name="file_4" placeholder="For example a Dropbox or Google Drive link" />
-					</label>
-					<label class="flex items-center hidden file5">
-					  <div class="w-20">File 5</div>
-					  <input class="mt-1 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="file" name="file_5" placeholder="For example a Dropbox or Google Drive link" />
-					</label>
-					<label class="flex items-center hidden file6">
-					  <div class="w-20">File 6</div>
-					  <input class="mt-1 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="file" name="file_6" placeholder="For example a Dropbox or Google Drive link" />
-					</label>
-				  </div>
+
+					<div>
+					{[...Array(10)].map((_, index) => (
+						<label
+						key={index}
+						class={`flex items-center ${index >= 3 ? 'hidden' : ''}`}
+						>
+						<div class="w-20">File {index + 1}</div>
+						<input
+							class="mt-1 block w-full rounded-md form-input px-5 py-4 bg-darkgrey"
+							type="file"
+							name={`file_${index + 1}`}
+							id={`file_${index + 1}`}
+							placeholder="For example a Dropbox or Google Drive link"
+						/>
+						</label>
+					))}
+					</div>
+
+				</div>
 
 				<div class="block text-right">
 					<div id="add-file" class="group px-4 py-2 border-2 border-white rounded-lg mb-4 text-basesm mx-auto inline-block text-center cursor-pointer hover:bg-white hover:text-black transition ">
@@ -132,9 +159,7 @@ import Layout from '../layouts/Layout.astro';
 
 
 <script>
-document.querySelectorAll('#file-inputs label:not(:first-of-type)').forEach(function(label) {
-  label.classList.add('hidden');
-});
+
 
 document.getElementById('add-file').addEventListener('click', function() {
   var hiddenLabel = document.querySelector('#file-inputs label.hidden');
@@ -142,7 +167,7 @@ document.getElementById('add-file').addEventListener('click', function() {
     hiddenLabel.classList.remove('hidden');
   }
   var numVisible = document.querySelectorAll('#file-inputs label:not(.hidden)').length;
-  if (numVisible === 6) {
+  if (numVisible === 10) {
     document.getElementById('add-file').classList.add('hidden');
   }
 });

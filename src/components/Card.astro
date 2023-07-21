@@ -1,5 +1,5 @@
 ---
-const { title, price, description } = Astro.props;
+const { title, price } = Astro.props;
 ---
 
 <a class="text-black group " href="/submit">
@@ -20,7 +20,30 @@ const { title, price, description } = Astro.props;
 	</div>
 	<div class="bg-white p-6 lg:p-8 rounded-b-3xl rounded-r-3xl">
 
-		<p class="text-base font-light">{description}</p>
+
+		{title === 'Basic' ? (
+		<p class="text-base font-light">
+			full credits to the author<br />
+			max 5 assets<br />
+			square only
+		</p>
+	  ) : title === 'Regular' ? (
+	  	<p class="text-base font-light">
+			full credits to the author<br />
+			max 10 assets<br />
+			all supported sizes allowed<br />
+			guaranteed only post on that day
+		</p>
+	  ) : (
+	  	<p class="text-base font-light">
+			full credits to the author<br />
+			max 10 assets<br />
+			all supported sizes allowed<br />
+			guaranteed only post on that day<br />
+			pinned to the channel for at least 7 days
+		</p>
+	  )}
+
 		<p class="text-md mt-8">{price}</p>
 
 	</div>

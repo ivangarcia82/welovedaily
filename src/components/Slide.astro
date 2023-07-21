@@ -1,8 +1,8 @@
 ---
-const { image, page } = Astro.props;
+const { image, copyright, page } = Astro.props;
 ---
 
 <div class="px-1 relative group">
-    <p class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 -translate-y-10 group-hover:translate-y-0 transition-all duration-500">@{page}</p>
+    <p class="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 -translate-y-10 group-hover:translate-y-0 transition-all duration-500">{copyright}<br />@{page}</p>
     <img class="h-[550px] w-[320px] object-cover rounded-2xl max-w-none my-[25px] group-hover:hover:h-[600px] group-hover:my-0 transition-all duration-500" src={image}>
 </div>
