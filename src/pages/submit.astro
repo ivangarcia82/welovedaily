@@ -20,27 +20,27 @@ import Layout from '../layouts/Layout.astro';
 				<label for="channel block">Plan</label>
 				<div class="grid grid-cols-3 mb-12 gap-2 pt-2">
 					<div>
-						<input type="radio" value="basic" name="plan" id="basic" class="peer hidden" />
+						<input type="radio" value="Basic" name="plan" id="Basic" class="peer hidden" />
 						<label
-						for="basic"
+						for="Basic"
 						class="text-md block cursor-pointer select-none rounded-xl pt-12 pb-10 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white"
 						>Basic
 						<span class="text-sm font-normal opacity-50 block mt-2">$25</span>
 						</label>		
 					</div>
 					<div>
-						<input type="radio" value="regular" name="plan" id="regular" class="peer hidden" />
+						<input type="radio" value="Regular" name="plan" id="Regular" class="peer hidden" />
 						<label
-						for="regular"
+						for="Regular"
 						class="text-md block cursor-pointer select-none rounded-xl pt-12 pb-10 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white"
 						>Regular
 						<span class="text-sm font-normal opacity-50 block mt-2">$35</span>
 						</label>
 					</div>
 					<div>
-						<input type="radio" value="pro" name="plan" id="pro" class="peer hidden" />
+						<input type="radio" value="Pro" name="plan" id="Pro" class="peer hidden" />
 						<label
-						for="pro"
+						for="Pro"
 						class="text-md block cursor-pointer select-none rounded-xl pt-12 pb-10 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white"
 						>Pro
 						<span class="text-sm font-normal opacity-50 block mt-2">$50</span>
@@ -160,6 +160,18 @@ import Layout from '../layouts/Layout.astro';
 
 <script>
 
+
+// Get the 'plan' parameter value from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const planValue = urlParams.get('plan');
+
+// Find the radio button with the matching value and check it
+const radioButtons = document.querySelectorAll('input[name="plan"]');
+radioButtons.forEach((radio) => {
+if (radio.value === planValue) {
+	radio.checked = true;
+}
+});
 
 document.getElementById('add-file').addEventListener('click', function() {
   var hiddenLabel = document.querySelector('#file-inputs label.hidden');
