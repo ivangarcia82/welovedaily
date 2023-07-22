@@ -2,7 +2,7 @@
 const { title, price } = Astro.props;
 ---
 
-<a class="text-black group " href={`/submit?plan=${encodeURIComponent(title)}`}>
+<a class="text-black group " href={`/submit/?plan=${encodeURIComponent(title)}`}>
 	<div class="flex">
 		<h2 class="grow bg-white text-lg lg:text-2xl p-6 lg:p-8 !pb-0 rounded-t-3xl">{title}</h2>
 		<div class="w-[70px] h-[70px] lg:w-[95px] lg:h-[95px] relative overflow-hidden">
@@ -24,14 +24,12 @@ const { title, price } = Astro.props;
 		{title === 'Basic' ? (
 		<p class="text-base font-light">
 			full credits to the author<br />
-			max 5 assets<br />
-			square only
+			max 6 assets
 		</p>
 	  ) : title === 'Regular' ? (
 	  	<p class="text-base font-light">
 			full credits to the author<br />
 			max 10 assets<br />
-			all supported sizes allowed<br />
 			guaranteed only post on that day
 		</p>
 	  ) : (
