@@ -9,7 +9,9 @@ import Layout from '../layouts/Layout.astro';
         
 		<div class="mx-auto container text-center max-w-[900px] mb-40">
 
-			<h1 class="text-xl lg:text-3xl mb-20"><em>Submit</em> your work</h1>
+			<h1 class="text-xl lg:text-3xl mb-4"><em>Submit</em> your work</h1>
+
+			<p class="text-[20px] mb-20 max-w-[600px] mx-auto opacity-50">Directly submit your work here or sent an email to <a href="mailto:hello@welovedaily.com" class="underline">hello@welovedaily.com</a> with the details and a link to the file.</p>
 
 			<form class="text-left max-w-[600px] mx-auto" netlify
 			netlify-honeypot
@@ -88,7 +90,8 @@ import Layout from '../layouts/Layout.astro';
 							type="file"
 							name={`file_${index + 1}`}
 							id={`file_${index + 1}`}
-							placeholder="For example a Dropbox or Google Drive link"
+							accept="image/*,video/*"
+          					size="8000000"
 						/>
 						</label>
 					))}
@@ -97,6 +100,8 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 
 				<div class="block text-right">
+
+
 					<div id="add-file" class="group px-4 py-2 border-2 border-white rounded-lg mb-4 text-basesm mx-auto inline-block text-center cursor-pointer hover:bg-white hover:text-black transition ">
 						Add another file
 						<svg class="ml-2 w-[26px] inline" width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -107,6 +112,10 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 
 				<label for="channel block">Channel</label>
+
+
+
+				
 				<div class="grid grid-cols-2 mb-12 gap-2 pt-2">
 					<div>
 						<input type="radio" value="welovewebdesign" name="channel" id="welovewebdesign" class="peer hidden" />
