@@ -20,57 +20,37 @@ import Layout from '../layouts/Layout.astro';
 			action="/success">
 
 
-				<fieldset>
-				<legend>Plan</legend>
+				<fieldset class="grid grid-cols-3 mb-12 gap-2 pt-2">
+				<legend class="col-span-3">Plan</legend>
 				<p>
 				  <label>
-					<input type="radio" name="plan" value="Basic - $25"> Basic - $25
+					<input type="radio" name="plan" value="Basic - $25" class="peer hidden" required>
+					<span class="text-base lg:text-md block cursor-pointer select-none rounded-xl pt-8 pb-6 lg:pt-12 lg:pb-10 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
+						Basic
+						<span class="text-sm font-normal opacity-50 block mt-2">$25</span>
+					</span>
 				  </label>
 				</p>
 				<p>
 				  <label>
-					<input type="radio" name="plan" value="Regular - $25"> Regular - $35
+					<input type="radio" name="plan" value="Regular - $25" class="peer hidden" required>
+					<span class="text-base lg:text-md block cursor-pointer select-none rounded-xl pt-8 pb-6 lg:pt-12 lg:pb-10 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
+						Regular
+						<span class="text-sm font-normal opacity-50 block mt-2">$35</span>
+					</span>
 				  </label>
 				</p>
 				<p>
 					<label>
-					  <input type="radio" name="plan" value="Pro - $50"> Pro - $50
+					  <input type="radio" name="plan" value="Pro - $50" class="peer hidden" required>
+					  <span class="text-base lg:text-md block cursor-pointer select-none rounded-xl pt-8 pb-6 lg:pt-12 lg:pb-10 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
+						Pro
+						<span class="text-sm font-normal opacity-50 block mt-2">$50</span>
+					  </span>
 					</label>
 				  </p>
 			  </fieldset>
 
-				<fieldset>
-				<legend>Plan</legend>
-				<div class="grid grid-cols-3 mb-12 gap-2 pt-2">
-					<div>
-						<label for="Basic">
-							<input type="radio" value="Basic - $25" name="plan_old" id="Basic" class="peer hidden" required />
-							<div class="text-base lg:text-md block cursor-pointer select-none rounded-xl pt-8 pb-6 lg:pt-12 lg:pb-10 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
-								Basic
-								<span class="text-sm font-normal opacity-50 block mt-2">$25</span>
-							</div>
-						</label>		
-					</div>
-					<div>
-						<label for="Regular">
-							<input type="radio" value="Regular - $35" name="plan_old" id="Regular" class="peer hidden" required />
-							<div class="text-base lg:text-md block cursor-pointer select-none rounded-xl pt-8 pb-6 lg:pt-12 lg:pb-10 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
-								Regular
-								<span class="text-sm font-normal opacity-50 block mt-2">$35</span>
-							</div>
-						</label>
-					</div>
-					<div>
-						<label for="Pro">
-							<input type="radio" value="Pro - $50" name="plan_old" id="Pro" class="peer hidden" required />
-							<div class="text-base lg:text-md block cursor-pointer select-none rounded-xl pt-8 pb-6 lg:pt-12 lg:pb-10 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
-								Pro
-								<span class="text-sm font-normal opacity-50 block mt-2">$50</span>
-							</div>
-						</label>
-					</div>
-				</div>
-				</fieldset>
 
 
 				<div class="flex w-full gap-4">
