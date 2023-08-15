@@ -1,0 +1,36 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+import Card from '../components/Card.astro';
+
+const { blok } = Astro.props
+
+---
+
+
+<div class="container mx-auto my-20 lg:my-40" {...storyblokEditable(blok)}>
+    <div class="grid lg:grid-cols-3 gap-2">
+
+        <div>
+            <Card
+                title="Basic"
+                description="full credits to the author, max 5 assets, square only"
+                price="$25"
+            />
+        </div>
+        <div>
+            <Card
+                title="Regular"
+                description="full credits to the author, max 10 assets, all supported sizes allowed, guaranteed only post on that day"
+                price="$35"
+            />
+        </div>
+        <div>
+            <Card
+                title="Pro"
+                description="full credits to the author, max 10 assets, all supported sizes allowed, pinned to the channel for at least 7 days, guaranteed only post on that day"
+                price="$50"
+            />
+        </div>
+
+    </div>
+</div>

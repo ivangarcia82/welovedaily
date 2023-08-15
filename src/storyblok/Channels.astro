@@ -1,0 +1,30 @@
+---
+import Marquee from '../components/Marquee.astro';
+import { storyblokEditable } from '@storyblok/astro'
+
+const { blok } = Astro.props
+
+---
+
+<div class="text-center"  {...storyblokEditable(blok)}>
+			
+    <h2 class="uppercase opacity-50 mb-4">Our channels
+    </h2>
+    <ul class="text-md lg:text-3xl mb-12 lg:mb-20">
+
+        {blok.Channel.map(channel => (
+                <li>
+                <Marquee
+                    href={channel.Link.url}
+                    title={channel.Name}
+                    color1={channel.Color1}
+                    color2={channel.Color2}
+                    count={channel.Followers}
+                />
+            </li>
+        ))}
+
+        
+    </ul>
+
+</div>

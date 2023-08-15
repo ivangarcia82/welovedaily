@@ -1,0 +1,26 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+import ListItem from '../components/ListItem.astro';
+
+const { blok } = Astro.props
+---
+<div class="container mx-auto my-12 lg:my-20"  {...storyblokEditable(blok)}>
+    <div class="grid lg:grid-cols-3 gap-4 lg:gap-20">
+        <div>
+
+            <ListItem text="Share your work with designers from all over the world." />
+
+        </div>
+        <div>
+
+            <ListItem text="Inspire yourself and others with your designs." />
+
+        </div>
+        <div>
+
+            <ListItem text="Grow your follower base and reach potential clients." />
+
+        </div>
+
+    </div>
+</div>

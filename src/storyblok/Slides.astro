@@ -1,0 +1,59 @@
+---
+import Slide from '../components/Slide.astro';
+import { storyblokEditable } from '@storyblok/astro'
+
+const { blok } = Astro.props
+---
+
+<div class="flex overflow-hidden image-marquee mt:20 lg:mt-40" {...storyblokEditable(blok)}>
+
+    <Slide
+        image="/img/ryveal.jpg"
+        copyright="By Ryveal Branding House"
+        page="welovebranding"
+    />
+    
+    <Slide
+        image="/img/drmartens.jpg"
+        copyright="By Nakido Belove"
+        page="welovewebdesign"
+    />
+
+    <Slide
+        image="/img/cloe.jpg"
+        copyright="By Chloe Chen @yanran_chen_"
+        page="weloveillustration"
+    />
+
+    <Slide
+        image="/img/249839224_2132750440205648_7797055166197690000_n.jpg"
+        copyright="By Manuel Rovira"
+        page="welovewebdesign"
+    />
+
+    <Slide
+        image="/img/anak.jpg"
+        copyright="By Jeremy Tan"
+        page="welovebranding"
+    />
+
+    <Slide
+        image="/img/297937299_465091231830535_8713918285565948251_n.jpg"
+        copyright="By Nadzeya Makeyeva"
+        page="weloveillustration"
+    />
+
+
+    <Slide
+        image="/img/fishcamp.jpg"
+        copyright="By SDCO Partners"
+        page="welovebranding"
+    />
+
+    <Slide
+        image="/img/tada.png"
+        copyright="By TA-DA Studio"
+        page="weloveillustration"
+    />
+
+</div>

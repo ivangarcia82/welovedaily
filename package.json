@@ -14,12 +14,15 @@
     "@astrojs/netlify": "^2.2.2",
     "@astrojs/tailwind": "^3.1.1",
     "@sendgrid/mail": "^7.7.0",
-    "astro": "^2.3.0",
+    "@storyblok/astro": "^2.5.11",
+    "astro": "^2.10.8",
     "gsap": "^3.11.5",
-    "tailwindcss": "^3.3.1"
+    "tailwindcss": "^3.3.1",
+    "vite": "^4.4.9"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
     "accessible-astro-components": "^2.0.0"
   }
 }
