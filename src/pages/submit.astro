@@ -20,7 +20,59 @@ import Layout from '../layouts/Layout.astro';
 			action="/success">
 
 
-				<fieldset class="grid grid-cols-3 mb-12 gap-2 pt-2">
+
+			<fieldset class="grid grid-cols-2 mb-12 gap-2 pt-2">
+				<legend class="col-span-3">Channel</legend>
+				<p>
+				  <label>
+					<input type="radio" name="channel" value="welovewebdesign" class="peer hidden" required>
+					<span class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
+						welovewebdesign
+						<span class={`tag from-webdesign_1 to-webdesign_2 inline-block mt-1 lg:mt-0 lg:ml-3 px-3 py-2 text-xs text-black leading-none rounded-full bg-gradient-to-r`}>701k</span>
+					</span>
+				  </label>
+				</p>
+				<p>
+					<label>
+					  <input type="radio" name="channel" value="welovebranding" class="peer hidden" required>
+					  <span class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
+						  welovebranding
+						  <span class={`tag from-branding_1 to-branding_2 inline-block mt-1 lg:mt-0 lg:ml-3 px-3 py-2 text-xs text-black leading-none rounded-full bg-gradient-to-r`}>543k</span>
+					  </span>
+					</label>
+				  </p>
+				  <p>
+					<label>
+					  <input type="radio" name="channel" value="weloveillustration" class="peer hidden" required>
+					  <span class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
+						  weloveillustration
+						  <span class={`tag from-illustration_1 to-illustration_2 inline-block mt-1 lg:mt-0 lg:ml-3 px-3 py-2 text-xs text-black leading-none rounded-full bg-gradient-to-r`}>485k</span>
+					  </span>
+					</label>
+				  </p>
+				  <p>
+					<label>
+					  <input type="radio" name="channel" value="weloveanimations" class="peer hidden" required>
+					  <span class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
+						  weloveanimations
+						  <span class={`tag from-animations_1 to-animations_2 inline-block mt-1 lg:mt-0 lg:ml-3 px-3 py-2 text-xs text-black leading-none rounded-full bg-gradient-to-r`}>194k</span>
+					  </span>
+					</label>
+				  </p>
+				  <p>
+					<label>
+					  <input type="radio" name="channel" value="weloveaidesign" class="peer hidden" required>
+					  <span class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
+						  weloveaidesign
+						  <span class={`tag from-aidesign_1 to-aidesign_2 inline-block mt-1 lg:mt-0 lg:ml-3 px-3 py-2 text-xs text-black leading-none rounded-full bg-gradient-to-r`}>new</span>
+					  </span>
+					</label>
+				  </p>
+
+			  </fieldset>
+
+
+				<fieldset class="grid grid-cols-3 mb-12 gap-2 pt-2" id="pricingPlans">
 				<legend class="col-span-3">Plan</legend>
 				<p>
 				  <label>
@@ -81,47 +133,6 @@ import Layout from '../layouts/Layout.astro';
 					<input class="mt-1 mb-12 block w-full rounded-md form-input px-5 py-4 bg-darkgrey" type="text" name="files" placeholder="Dropbox, Google Drive or other link" />
 				</label>
 
-				
-				<fieldset class="grid grid-cols-2 mb-12 gap-2 pt-2">
-					<legend class="col-span-3">Channel</legend>
-					<p>
-					  <label>
-						<input type="radio" name="channel" value="welovewebdesign" class="peer hidden" required>
-						<span class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
-							welovewebdesign
-							<span class={`tag from-webdesign_1 to-webdesign_2 inline-block mt-1 lg:mt-0 lg:ml-3 px-3 py-2 text-xs text-black leading-none rounded-full bg-gradient-to-r`}>701k</span>
-						</span>
-					  </label>
-					</p>
-					<p>
-						<label>
-						  <input type="radio" name="channel" value="welovebranding" class="peer hidden" required>
-						  <span class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
-							  welovebranding
-							  <span class={`tag from-branding_1 to-branding_2 inline-block mt-1 lg:mt-0 lg:ml-3 px-3 py-2 text-xs text-black leading-none rounded-full bg-gradient-to-r`}>543k</span>
-						  </span>
-						</label>
-					  </p>
-					  <p>
-						<label>
-						  <input type="radio" name="channel" value="weloveillustration" class="peer hidden" required>
-						  <span class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
-							  weloveillustration
-							  <span class={`tag from-illustration_1 to-illustration_2 inline-block mt-1 lg:mt-0 lg:ml-3 px-3 py-2 text-xs text-black leading-none rounded-full bg-gradient-to-r`}>485k</span>
-						  </span>
-						</label>
-					  </p>
-					  <p>
-						<label>
-						  <input type="radio" name="channel" value="weloveanimations" class="peer hidden" required>
-						  <span class="block cursor-pointer select-none rounded-xl p-6 bg-darkgrey text-center peer-checked:bg-white transition peer-checked:text-black border-2 border-transparent hover:border-white">
-							  weloveanimations
-							  <span class={`tag from-animations_1 to-animations_2 inline-block mt-1 lg:mt-0 lg:ml-3 px-3 py-2 text-xs text-black leading-none rounded-full bg-gradient-to-r`}>194k</span>
-						  </span>
-						</label>
-					  </p>
-					
-				  </fieldset>
 	
 				<button class="px-10 py-4 border-2 rounded-lg text-base mx-auto block hover:bg-white hover:text-black transition border-white">Submit for review</button>
 
@@ -136,6 +147,22 @@ import Layout from '../layouts/Layout.astro';
 
 
 <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all radio buttons with the name "channel"
+    const radios = document.querySelectorAll('input[name="channel"]');
+
+    // Listen for change on each radio button
+    radios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if(this.value === 'weloveaidesign') {
+                document.getElementById('pricingPlans').style.display = 'none';
+            } else {
+                document.getElementById('pricingPlans').style.display = 'grid';
+            }
+        });
+    });
+});
 
 
 // Get the 'plan' parameter value from the URL

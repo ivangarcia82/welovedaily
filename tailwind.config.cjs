@@ -35,6 +35,8 @@ module.exports = {
 			'illustration_2': '#EF473A',
 			'animations_1': '#654EA3',
 			'animations_2': '#EAAFC8',
+			'aidesign_1': '#27EF2F',
+			'aidesign_2': '#01B086',
 		  },
 		extend: {},
 	},
